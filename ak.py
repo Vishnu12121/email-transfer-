@@ -1,3 +1,4 @@
+
 import os
 import time
 import smtplib
@@ -62,7 +63,7 @@ class ImageHandler(FileSystemEventHandler):
             logging.error(f"An error occurred while sending email: {e}")
 
 if __name__ == "__main__":
-    path_to_watch = r"C:\Users\vishn\OneDrive\Pictures\Camera Roll" # Change this to your gallery path
+    path_to_watch = r"/storage/emulated/0/DCIM/Snapchat/" # Change this to your gallery path
     event_handler = ImageHandler()
     observer = Observer()
     observer.schedule(event_handler, path=path_to_watch, recursive=False)
@@ -75,4 +76,3 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         observer.stop()
     observer.join()
-  
